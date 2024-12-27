@@ -12,7 +12,7 @@ export async function GET(){
         }
         return NextResponse.json({ data, status: 200})
     }
-    catch(error){
+    catch(error:any){
         return NextResponse.json({ error: error.message }, { status: 500 })
     }
 }
@@ -40,7 +40,7 @@ export async function POST(req: NextRequest) {
         data,
         status : 200
       })
-    } catch (error) {
+    } catch (error:any) {
       return NextResponse.json({ error: error.message }, { status: 500 })
     }
   }
