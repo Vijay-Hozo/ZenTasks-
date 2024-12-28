@@ -9,10 +9,7 @@
 - **Create Tasks**: Add new tasks with titles, descriptions, and priority labels.
 - **Edit Tasks**: Effortlessly update task details or statuses.
 - **Delete Tasks**: Remove completed or unnecessary tasks from your list.
-- **Task Filtering**: Search and filter tasks by status or priority.
-- **Dark Mode**: Toggle between light and dark themes for improved readability.
-- **Real-Time Updates**: Tasks sync instantly, powered by Supabase.
-- **Responsive Design**: Tailored for mobile, tablet, and desktop devices.
+- **Task Filtering**: Search and filter tasks by status or priority
 
 ---
 
@@ -36,8 +33,6 @@
 
 ### Additional Tools
 - **[Vercel](https://vercel.com/)**: For fast and scalable deployment.
-- **[HeroIcons](https://heroicons.com/)**: Elegant, easy-to-use icons.
-
 ---
 
 ## 🖥️ Demo
