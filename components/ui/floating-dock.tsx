@@ -38,40 +38,40 @@ const FloatingDockDesktop = ({
   items: { title: string; icon: React.ReactNode; href: string }[];
   className?: string;
 }) => {
-  let mouseX = useMotionValue(Infinity);
+  let mouseY = useMotionValue(Infinity);
   return (
     <motion.div
-      onMouseMove={(e) => mouseX.set(e.pageX)}
-      onMouseLeave={() => mouseX.set(Infinity)}
+      onMouseMove={(e) => mouseY.set(e.pageX)}
+      onMouseLeave={() => mouseY.set(Infinity)}
       className={cn(
         "mx-auto flex md:flex h-16 gap-4 items-end  rounded-2xl bg-gray-50 dark:bg-neutral-900 px-4 pb-3",
         className
       )}
     >
       {items.map((item) => (
-        <IconContainer mouseX={mouseX} key={item.title} {...item} />
+        <IconContainer mouseY={mouseY} key={item.title} {...item} />
       ))}
     </motion.div>
   );
 };
 
 function IconContainer({
-  mouseX,
+  mouseY,
   title,
   icon,
   href,
 }: {
-  mouseX: MotionValue;
+  mouseY: MotionValue;
   title: string;
   icon: React.ReactNode;
   href: string;
 }) {
   let ref = useRef<HTMLDivElement>(null);
 
-  let distance = useTransform(mouseX, (val) => {
-    let bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
+  let distance = useTransform(mouseY, (val) => {
+    let bounds = ref.current?.getBoundingClientRect() ?? { y: 0, width: 0 };
 
-    return val - bounds.x - bounds.width / 2;
+    return val - bounds.y - bounds.width / 2;
   });
 
   let widthTransform = useTransform(distance, [-150, 0, 150], [40, 80, 40]);
@@ -120,9 +120,9 @@ function IconContainer({
         <AnimatePresence>
           {hovered && (
             <motion.div
-              initial={{ opacity: 0, y: 10, x: "-50%" }}
-              animate={{ opacity: 1, y: 0, x: "-50%" }}
-              exit={{ opacity: 0, y: 2, x: "-50%" }}
+              initial={{ opacity: 0, x: 10, y: "-50%" }}
+              animate={{ opacity: 1, x: 0, y: "-50%" }}
+              exit={{ opacity: 0, x: 2, y: "-50%" }}
               className="px-2 py-0.5 whitespace-pre rounded-md bg-gray-100 border dark:bg-neutral-800 dark:border-neutral-900 dark:text-white border-gray-200 text-neutral-700 absolute left-1/2 -translate-x-1/2 -top-8 w-fit text-xs"
             >
               {title}

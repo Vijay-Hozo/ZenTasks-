@@ -19,7 +19,7 @@ export async function GET(
     }
 
     return NextResponse.json({ message: "success", data }, { status: 200 });
-  } catch (err) {
+  } catch (err:any) {
     return NextResponse.json({ error: err.message }, { status: 500 });
   }
 }
@@ -38,7 +38,7 @@ export async function PUT(req:NextRequest,{params}:{params:{id:string}}){
         }
         return NextResponse.json({message:"Task updated successfully"},{status:200})
     }
-    catch(error){
+    catch(error:any){
         return NextResponse.json({error:error.message},{status:500})
     }
 }
@@ -56,7 +56,7 @@ export async function DELETE(req:NextRequest,{params}:{params:{id:string}}){
         }
         return NextResponse.json({message:"Task deleted successfully"},{status:200})
     }
-    catch(error){
+    catch(error:any){
         return NextResponse.json({error:error.message},{status:500})
     }
 }

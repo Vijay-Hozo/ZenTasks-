@@ -5,6 +5,7 @@ import {
     IconTerminal2,
   } from "@tabler/icons-react";
 import { FloatingDock } from "@/components/ui/floating-dock";
+import DashHeader from "@/components/dash-header";
 
 const defaultUrl = process.env.VERCEL_URL
   ? `https://${process.env.VERCEL_URL}`
@@ -58,6 +59,7 @@ export default function RootLayout({
       />
       </div>
       <div>
+      <DashHeader />
         {children}
       </div>
     </div>
