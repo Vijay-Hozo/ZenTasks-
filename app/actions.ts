@@ -145,5 +145,5 @@ export const signOutAction = async () => {
     console.error(`Sign-out error: ${error.message}`);
   }
 
-  return redirect("/sign-in");
+  return redirect("/");
 };

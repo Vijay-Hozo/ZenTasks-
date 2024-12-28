@@ -49,7 +49,6 @@ const Page = () => {
       if (response.ok) {
         setTasks(result.data || []);
 
-        // Count tasks by status
         const counts = result.data.reduce(
           (acc: Record<string, number>, task: Task) => {
             acc[task.status] = (acc[task.status] || 0) + 1;

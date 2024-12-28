@@ -20,7 +20,7 @@ export default function Header() {
         </p>
 
         <Link
-          href="/dashboard"
+          href="/sign-in"
           className="mt-10 inline-block bg-amber-500 text-white px-6 py-3 text-sm font-medium rounded "
         >
           Go to Dashboard <span className="ml-2">→</span>
