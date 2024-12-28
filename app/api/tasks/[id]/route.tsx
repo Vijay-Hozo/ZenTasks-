@@ -4,7 +4,7 @@ import { createClient } from "@/utils/supabase/client";
 export async function GET(
   //This end point is to retrieve task from supabase
   req: Request,
-  { params }: { params: { id: string } }
+  { params }: any 
 ) {
   const supabase = createClient();
   const { id } = await params;
@@ -53,7 +53,7 @@ export async function PUT(
 
 export async function DELETE(
   req: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: any
 ) {
   //This end point is to delete task from supabase
   const supabase = createClient();
