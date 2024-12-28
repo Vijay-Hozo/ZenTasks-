@@ -25,7 +25,7 @@ const Page = () => {
   const [activeTab, setActiveTab] = useState("in-progress");
   const [task, setTask] = useState<Task | null>(null);
   const [editDialogOpen, setEditDialogOpen] = useState(false);
-
+  const [status, setStatus] = useState("");
   const [taskCounts, setTaskCounts] = useState<any>({
     "in-progress": 0,
     "not-started": 0,
@@ -45,6 +45,7 @@ const Page = () => {
       const response = await fetch(`/api/tasks`);
       const result = await response.json();
 
+      console.log("Tasks:", result.data);
       if (response.ok) {
         setTasks(result.data || []);
 
@@ -232,13 +233,19 @@ const Page = () => {
                   <label htmlFor="status" className="block font-medium text-sm">
                     Status
                   </label>
-                  <input
-                    id="status"
-                    type="text"
-                    value={task.status}
-                    onChange={handleChange}
-                    className="border rounded px-2 py-1 w-full"
-                  />
+                  <div className="grid grid-cols-4 items-center gap-4">
+              <select
+                id="status"
+                value={task.status}
+                onChange={(e) => handleChange(e as any)}
+                className="col-span-3 rounded-md p-2"
+              >
+                <option value="">Select status</option>
+                <option value="not-started">Not Started</option>
+                <option value="in-progress">In Progress</option>
+                <option value="completed">Completed</option>
+              </select>
+            </div>
                 </div>
               </div>
               <DialogFooter>
