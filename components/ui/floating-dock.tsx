@@ -1,7 +1,4 @@
-
-
 "use client"
-
 import { cn } from "@/lib/utils";
 import {
   AnimatePresence,
@@ -17,7 +14,6 @@ import { useRef, useState } from "react";
 export const FloatingDock = ({
   items,
   desktopClassName,
-  mobileClassName,
 }: {
   items: { title: string; icon: React.ReactNode; href: string }[];
   desktopClassName?: string;

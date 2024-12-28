@@ -1,10 +1,4 @@
 import { Geist } from "next/font/google";
-import {
-    IconHome,
-    IconNewSection,
-    IconTerminal2,
-  } from "@tabler/icons-react";
-import { FloatingDock } from "@/components/ui/floating-dock";
 import DashHeader from "@/components/dash-header";
 
 const defaultUrl = process.env.VERCEL_URL
@@ -27,41 +21,10 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-    const links = [
-        {
-          title: "Home",
-          icon: (
-            <IconHome className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-          ),
-          href: "#",
-        },
-     
-        {
-          title: "Products",
-          icon: (
-            <IconTerminal2 className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-          ),
-          href: "#",
-        },
-        {
-          title: "Components",
-          icon: (
-            <IconNewSection className="h-full w-full text-neutral-500 dark:text-neutral-300" />
-          ),
-          href: "#",
-        },
-    ]
   return (
-    <div className="flex w-full gap-10 justify-evenly ">
-      <div>
-        <FloatingDock desktopClassName="flex flex-col min-h-[200px] justify-center translate-y-20"
-        items={links}
-      />
-      </div>
-      <div>
+    <div className=" w-full gap-10 justify-evenly ">
       <DashHeader />
         {children}
-      </div>
     </div>
   );
 }
