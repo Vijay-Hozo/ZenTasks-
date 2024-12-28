@@ -33,7 +33,6 @@ export default function RootLayout({
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
-          enableSystem
           disableTransitionOnChange
         >
           <main className="min-h-screen flex flex-col items-center ">
