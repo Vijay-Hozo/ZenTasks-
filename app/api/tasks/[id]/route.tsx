@@ -27,7 +27,7 @@ export async function GET(
 
 export async function PUT(
   req: NextRequest,
-  { params }: { params: { id: any } }
+  { params }: any
 ) {
   //This end point is to update task in supabase
   const supabase = createClient();
